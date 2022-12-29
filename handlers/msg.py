@@ -165,8 +165,8 @@ def updateHandlers(client, message,redis):
 				Bot("sendMessage",{"chat_id":chatID,"text":r.sudostart,"reply_to_message_id":message.id,"parse_mode":"html","reply_markup":kb})
 				return 0
 			getbot = client.get_me()
-			kb = InlineKeyboardMarkup([[InlineKeyboardButton("Alamy3", url="t.me/Uu_Fs1")]])
-			Bot("sendphoto",{"chat_id":chatID,"text":r.botstart.format(getbot.first_name,getbot.username),"reply_to_message_id":message.id,"parse_mode":"html","reply_markup":kb})
+			kb = InlineKeyboardMarkup([[InlineKeyboardButton("TshakeTeam", url="t.me/zx_xx")]])
+			Bot("sendMessage",{"chat_id":chatID,"text":r.botstart.format(getbot.first_name,getbot.username),"reply_to_message_id":message.id,"parse_mode":"html","reply_markup":kb})
 			
 		if text and re.search("^/start (.*)$",text):
 			tx = text.replace("/start ","")
