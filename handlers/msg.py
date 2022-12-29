@@ -162,10 +162,10 @@ def updateHandlers(client, message,redis):
 			redis.sadd("{}Nbot:privates".format(BOT_ID),userID)
 			if rank == "sudo":
 				kb = ReplyKeyboardMarkup([[r.RKgp, r.RKgpl],[r.RKaf, r.RKrf],[r.RKf],["جلب نسخه احتياطيه"],[r.RKub]],resize_keyboard=True)
-				Bot("sendphoto",{"chat_id":chatID,"text":r.sudostart,"reply_to_message_id":message.id,"parse_mode":"html","reply_markup":kb})
+				Bot("sendMessage",{"chat_id":chatID,"text":r.sudostart,"reply_to_message_id":message.id,"parse_mode":"html","reply_markup":kb})
 				return 0
 			getbot = client.get_me()
-			kb = InlineKeyboardMarkup([[InlineKeyboardButton("TshakeTeam", url="t.me/zx_xx")]])
+			kb = InlineKeyboardMarkup([[InlineKeyboardButton("Alamy3", url="t.me/Uu_Fs1")]])
 			Bot("sendphoto",{"chat_id":chatID,"text":r.botstart.format(getbot.first_name,getbot.username),"reply_to_message_id":message.id,"parse_mode":"html","reply_markup":kb})
 			
 		if text and re.search("^/start (.*)$",text):
@@ -186,11 +186,11 @@ def updateHandlers(client, message,redis):
 							words = words+"\n"+str(i)+" - {"+word+"}"
 							i += 1
 							if len(words) > 3000:
-								Bot("sendphoto",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
+								Bot("sendMessage",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
 								words = ''
-						Bot("sendphoto",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
+						Bot("sendMessage",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
 						reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(r.Delall2R,callback_data=json.dumps(["del{}".format(TY+'BOT'),"",userID])),]])
-						Bot("sendphoto",{"chat_id":chatID,"text":r.DelallR,"reply_to_message_id":message.id,"disable_web_page_preview":True,"reply_markup":reply_markup})
+						Bot("sendMessage",{"chat_id":chatID,"text":r.DelallR,"reply_to_message_id":message.id,"disable_web_page_preview":True,"reply_markup":reply_markup})
 					
 			if order == "showreplylist":
 				chatId = split[1]
