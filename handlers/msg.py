@@ -186,11 +186,11 @@ def updateHandlers(client, message,redis):
 							words = words+"\n"+str(i)+" - {"+word+"}"
 							i += 1
 							if len(words) > 3000:
-								Bot("sendMessage",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
+								Bot("sendphoto",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
 								words = ''
-						Bot("sendMessage",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
+						Bot("sendphoto",{"chat_id":userId,"text":words,"reply_to_message_id":message.id,"parse_mode":"html"})
 						reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(r.Delall2R,callback_data=json.dumps(["del{}".format(TY+'BOT'),"",userID])),]])
-						Bot("sendMessage",{"chat_id":chatID,"text":r.DelallR,"reply_to_message_id":message.id,"disable_web_page_preview":True,"reply_markup":reply_markup})
+						Bot("sendphoto",{"chat_id":chatID,"text":r.DelallR,"reply_to_message_id":message.id,"disable_web_page_preview":True,"reply_markup":reply_markup})
 					
 			if order == "showreplylist":
 				chatId = split[1]
